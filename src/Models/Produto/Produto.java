@@ -1,4 +1,4 @@
-package Models;
+package Models.Produto;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
