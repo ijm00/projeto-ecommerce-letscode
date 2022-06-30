@@ -1,4 +1,4 @@
-package Models;
+package Models.Carrinho;
 
 import Models.Produto.Produto;
 
