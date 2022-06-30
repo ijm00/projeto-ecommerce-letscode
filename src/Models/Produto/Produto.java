@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public abstract class Produto {
+public abstract class Produto<T> {
     String id;
     String nome;
     String descricao;
