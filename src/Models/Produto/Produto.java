@@ -14,7 +14,7 @@ public abstract class Produto<T> {
         this.id = gerarId();
         this.nome = nome ;
         this.descricao = descricao;
-        this.preco = BigDecimal.valueOf(preco);
+        this.preco = new BigDecimal(preco);
     }
 
     private String gerarId() {
