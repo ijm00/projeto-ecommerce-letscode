@@ -1,12 +1,48 @@
-
-
 import Models.Produto.ProdutoCategoria1;
+
+/* Crie uma aplicação que simule um e-commerce simples. A aplicação deverá manter pelo menos quatro 
+categorias de produtos diferentes, mas nem todas as categorias obrigatoriamente precisam ter produtos 
+cadastrados. Quando um cliente faz um pedido de compra, o(s)item(s)são carregados em um carrinho virtual. 
+Pode-se pedir mais de um item para cada produto.
+
+O cliente tem as opções de pagamento: BOLETO, CARTÃO PARCELADO, CARTÃO A VISTA E PAYPAL.
+Parcelamentos são permitidos apenas na opção cartão parcelado, e no máximo em 3 vezes.
+Na classe principal da aplicação, simule a entrada de pelo menos dois produtos, em modalidades de compra diferentes,
+e mostre os itens adquiridos na saída de tela.
+
+Utilizar todos os recursos apresentados até agora, principalmente as Collections (List,Map,Linked,etc), 
+Interfaces e Generics, além de pelo menos um princípio SOLID.
+ */
 
 public class Main {
     public static void main(String[] args) throws Exception {
         ProdutoCategoria1 prod1 = new ProdutoCategoria1("Notebook", "Notebook Dell", 7547.78);
         ProdutoCategoria1 prod2 = new ProdutoCategoria1("Celular", "Galaxy A21", 3451.78);
         System.out.println(prod1 + "\n" + prod2);
-        
+
+
+
+        // Ação1: Cliente (seleciona categorias e), escolhe quantidade e adiciona produtos em um carrinho virtual
+        // Possivel repetição da ação 1 para outros produtos
+
+        // Encerramento do carrinho/checkout
+
+        // Sistema mostra valor total (lista?) e pergunta qual a forma de pagamento
+
+
+
+
+        // Ação1: Cliente (seleciona categorias e), escolhe quantidade e adiciona produtos em um carrinho virtual
+        // Possivel repetição da ação 1 para outros produtos
+
+        // Encerramento do carrinho/checkout
+
+        // Sistema mostra valor total (lista?) e pergunta qual a forma de pagamento
+
+
+
+
+
+
     }
 }
