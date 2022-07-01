@@ -17,12 +17,16 @@ public abstract class Produto<T> {
         this.preco = new BigDecimal(preco);
     }
 
-    private String gerarId() {
+    private String gerarId() {//TODO verificar existencia de id igual
         return Double.toString(Math.random()).substring(2, 6);
     }
 
     public String getId() {
         return id;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
     }
 
     public void setPreco(BigDecimal preco) {
