@@ -1,4 +1,3 @@
-import Models.Produto.ProdutoCategoria1;
 
 /* Crie uma aplicação que simule um e-commerce simples. A aplicação deverá manter pelo menos quatro 
 categorias de produtos diferentes, mas nem todas as categorias obrigatoriamente precisam ter produtos 
@@ -14,11 +13,13 @@ Utilizar todos os recursos apresentados até agora, principalmente as Collection
 Interfaces e Generics, além de pelo menos um princípio SOLID.
  */
 
+import Loja.Loja;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        ProdutoCategoria1 prod1 = new ProdutoCategoria1("Notebook", "Notebook Dell", 7547.78);
-        ProdutoCategoria1 prod2 = new ProdutoCategoria1("Celular", "Galaxy A21", 3451.78);
-        System.out.println(prod1 + "\n" + prod2);
+    
+    Loja ecommerce = Loja.getInstance();  
+    
 
 
 

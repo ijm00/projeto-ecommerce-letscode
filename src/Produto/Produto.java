@@ -1,10 +1,10 @@
-package Models.Produto;
+package Produto;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public abstract class Produto<T> {
+public abstract class Produto {
     String id;
     String nome;
     String descricao;
