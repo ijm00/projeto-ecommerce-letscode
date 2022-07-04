@@ -6,7 +6,7 @@ import Servicos.CadastrarProdutoNaLoja;
 
 public abstract class TintasFactory{//Eletronicos
 
-    public static void TintaFactory() {
+    public static void ProdutoFactory() {
         Tinta prod1 = new Tinta("Aquarela White Nights", "Full Pan 10 mL", 40.00);
         Tinta prod2 = new Tinta("Aquarela Van Gogh", "Tubo 10 mL", 33.00);
         

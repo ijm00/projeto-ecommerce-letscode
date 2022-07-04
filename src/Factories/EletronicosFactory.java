@@ -4,7 +4,7 @@ import Loja.Inventario;
 import Produto.ProdutoCategoria1;
 import Servicos.CadastrarProdutoNaLoja;
 
-public abstract class ProdutoCategoria1Factory{//Eletronicos
+public abstract class EletronicosFactory{//Eletronicos
 
     public static void ProdutoFactory() {
         ProdutoCategoria1 prod1 = new ProdutoCategoria1("Notebook", "Dell 3210", 4515.12);
