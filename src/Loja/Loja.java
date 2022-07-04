@@ -5,9 +5,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import Factories.BebidasFactory;
 import Factories.EletronicosFactory;
 import Factories.InstrumentoMusicalFactory;
 import Factories.TintasFactory;
+import Produto.Bebida;
 import Produto.InstrumentoMusical;
 import Produto.Produto;
 
@@ -40,6 +42,7 @@ public class Loja {
         EletronicosFactory.ProdutoFactory();
         InstrumentoMusicalFactory.ProdutoFactory();
         TintasFactory.ProdutoFactory();
+        BebidasFactory.ProdutoFactory();
     }
 
 }
