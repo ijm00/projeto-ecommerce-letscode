@@ -23,8 +23,6 @@ public class Main {
     ecommerce.carregarProdutos();
     
 
-
-
         // Ação1: Cliente (seleciona categorias e), escolhe quantidade e adiciona produtos em um carrinho virtual
         // Possivel repetição da ação 1 para outros produtos
 
