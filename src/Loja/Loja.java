@@ -5,6 +5,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import Factories.EletronicosFactory;
+import Factories.InstrumentoMusicalFactory;
+import Factories.TintasFactory;
+import Produto.InstrumentoMusical;
 import Produto.Produto;
 
 public class Loja {
@@ -14,7 +18,7 @@ public class Loja {
     private Map <String, Integer> inventario = new HashMap<String, Integer>();
 
     private Loja() {
-
+        
     }
 
     public static Loja getInstance() {
@@ -30,6 +34,12 @@ public class Loja {
 
     public Map <String, Integer> getInventario() {
         return this.inventario;
+    }
+
+    public void carregarProdutos() {
+        EletronicosFactory.ProdutoFactory();
+        InstrumentoMusicalFactory.ProdutoFactory();
+        TintasFactory.ProdutoFactory();
     }
 
 }

@@ -13,12 +13,14 @@ Utilizar todos os recursos apresentados até agora, principalmente as Collection
 Interfaces e Generics, além de pelo menos um princípio SOLID.
  */
 
+
 import Loja.Loja;
 
 public class Main {
     public static void main(String[] args) throws Exception {
     
     Loja ecommerce = Loja.getInstance();  
+    ecommerce.carregarProdutos();
     
 
 
