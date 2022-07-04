@@ -4,7 +4,7 @@ import Loja.Inventario;
 import Produto.InstrumentoMusical;
 import Servicos.CadastrarProdutoNaLoja;
 
-public abstract class InstrumentoMusicaFactory {
+public abstract class InstrumentoMusicalFactory {
 
     public static void ProdutoFactory() {
 

@@ -4,21 +4,31 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import Loja.Loja;
+
 public abstract class Produto {
     String id;
     String nome;
     String descricao;
     BigDecimal preco;
 
+    Loja ecommerce = Loja.getInstance();
+
     public Produto(String nome, String descricao, Double preco) {
         this.id = gerarId();
-        this.nome = nome ;
+        this.nome = nome;
         this.descricao = descricao;
         this.preco = new BigDecimal(preco);
     }
 
-    private String gerarId() {//TODO verificar existencia de id igual
-        return Double.toString(Math.random()).substring(2, 6);
+    private String gerarId() {
+        // geração de id do produto
+        String newId = Double.toString(Math.random()).substring(2, 6);
+        // verificação se já existe produto na loja com mesmo id
+        while (ecommerce.getInventario().containsKey(newId)) {
+            newId = Double.toString(Math.random()).substring(2, 6);
+        }
+        return newId;
     }
 
     public String getId() {
@@ -36,7 +46,7 @@ public abstract class Produto {
     @Override
     public String toString() {
         String precoFormatado = NumberFormat.getCurrencyInstance(new Locale("pt", "br")).format(preco);
-        return String.format("[ID: %s\tNOME: %s\tDESCRICAO: %s\tPRECO: %s] ", 
-                                        id, nome, descricao, precoFormatado);
+        return String.format("[ID: %s\tNOME: %s\tDESCRICAO: %s\tPRECO: %s] ",
+                id, nome, descricao, precoFormatado);
     }
 }
