@@ -1,6 +1,6 @@
 package Compra;
 
-public enum MeiosDePagamennto {
+public enum MeiosDePagamento {
     CARTAO_A_VISTA (1),
     CARTAO_PARCELADO (3),
     PAYPAL (1),
@@ -8,7 +8,11 @@ public enum MeiosDePagamennto {
 
     final int qtdMaxParcelas;
 
-    private MeiosDePagamennto(int qtdMaxParcelas){
+    private MeiosDePagamento(int qtdMaxParcelas){
         this.qtdMaxParcelas = qtdMaxParcelas;
+    }
+
+    public int getQtdMaxParcelas() {
+        return qtdMaxParcelas;
     }
 }

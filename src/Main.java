@@ -16,6 +16,7 @@ Interfaces e Generics, além de pelo menos um princípio SOLID.
 
 import Compra.Carrinho;
 import Compra.Comprar;
+import Compra.MeiosDePagamento;
 import Loja.Loja;
 import Produto.Produto;
 
@@ -26,15 +27,25 @@ public class Main {
         Loja ecommerce = Loja.getInstance();  
         ecommerce.carregarProdutos();
 
-        Comprar compra = new Comprar();
-        compra.comprar(ecommerce, 1, 4);
+        Carrinho carrinho = new Carrinho();
+        carrinho.adicionarAoCarrinho(ecommerce, 3, 1);
+        carrinho.adicionarAoCarrinho(ecommerce, 6, 3);
+
 
         ecommerce.getInventario().keySet().forEach(key -> {System.out.println(key +" - " + ecommerce.getInventario().get(key));});
         ecommerce.getCatalogo().forEach((Produto produto) -> {System.out.println(produto);});
+
+        System.out.println("Carrinho de compra");
         
-        System.err.println(compra.carrinho.getCarrinho());
+        carrinho.getCarrinho().keySet().forEach(key -> {System.out.println(key);});
 
         ecommerce.getCatalogo();
+
+        Comprar compra = new Comprar(carrinho, MeiosDePagamento.BOLETO, 1);
+
+        compra.calcularValorTotal();
+        
+        System.out.println(compra);
 
         
 
