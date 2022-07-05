@@ -50,7 +50,7 @@ public abstract class Produto {
     @Override
     public String toString() {
         String precoFormatado = NumberFormat.getCurrencyInstance(new Locale("pt", "br")).format(preco);
-        return String.format("[ID: %d\tNOME: %s\tDESCRICAO: %s\tPRECO: %s ] ",
+        return String.format("[ID: %d\tNOME: %s\tDESCRICAO: %s\tPRECO: %s] ",
                 id, nome, descricao, precoFormatado);
     }
 }
