@@ -19,6 +19,6 @@ public abstract class Catalogo {
     }
        
 
-    // TODO remover produto, desnecessario para os propositos do projeto
+    // remover produto: desnecessario para os propositos do projeto
 
 }
