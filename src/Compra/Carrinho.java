@@ -1,23 +1,23 @@
 package Compra;
 
 import Produto.Produto;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public abstract class Carrinho {
     
-    private static Set<Produto> listaDeProdutos = new HashSet<>();
+    private static Map<Produto, Integer> listaDeProdutos = new HashMap<>();
 
-    public static <T extends Produto> void adicionarAoCarrinho(T produto) {
-        getListaDeProdutos().add(produto);
+    public static <T extends Produto> void adicionarAoCarrinho(T produto, Integer qtdeAcrescentar) {
+        getCarrinho().put(produto, qtdeAcrescentar);
     }
 
     public Carrinho() {
 
     }
 
-    public static Set<Produto> getListaDeProdutos() {
+    public static Map<Produto, Integer> getCarrinho() {
         return listaDeProdutos;
     }
 
