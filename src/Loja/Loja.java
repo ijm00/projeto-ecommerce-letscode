@@ -15,7 +15,7 @@ public class Loja {
     private static Loja ecommerce;
 
     private Set<Produto> catalogo = new HashSet<>();
-    private Map <String, Integer> inventario = new HashMap<String, Integer>();
+    private Map <Integer, Integer> inventario = new HashMap<Integer, Integer>();
 
     private Loja() {
         
@@ -32,7 +32,7 @@ public class Loja {
         return this.catalogo;
     }
 
-    public Map <String, Integer> getInventario() {
+    public Map <Integer, Integer> getInventario() {
         return this.inventario;
     }
 
