@@ -7,7 +7,8 @@ import java.util.Locale;
 import Loja.Loja;
 
 public abstract class Produto {
-    String id;
+    int id;
+    static int idControle = 0; 
     String nome;
     String descricao;
     BigDecimal preco;
@@ -15,12 +16,14 @@ public abstract class Produto {
     Loja ecommerce = Loja.getInstance();
 
     public Produto(String nome, String descricao, Double preco) {
-        this.id = gerarId();
+        Produto.idControle += 1;
+        this.id = Integer.valueOf(idControle);
         this.nome = nome;
         this.descricao = descricao;
         this.preco = new BigDecimal(preco);
     }
 
+    /*
     private String gerarId() {
         // geração de id do produto
         String newId = Double.toString(Math.random()).substring(2, 6);
@@ -30,8 +33,9 @@ public abstract class Produto {
         }
         return newId;
     }
+    */
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -46,7 +50,7 @@ public abstract class Produto {
     @Override
     public String toString() {
         String precoFormatado = NumberFormat.getCurrencyInstance(new Locale("pt", "br")).format(preco);
-        return String.format("[ID: %s\tNOME: %s\tDESCRICAO: %s\tPRECO: %s] ",
+        return String.format("[ID: %d\tNOME: %s\tDESCRICAO: %s\tPRECO: %s ] ",
                 id, nome, descricao, precoFormatado);
     }
 }
