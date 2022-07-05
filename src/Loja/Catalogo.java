@@ -9,6 +9,15 @@ public abstract class Catalogo {
         ecommerce.getCatalogo().add(produto);
     }
 
+    public static Produto procurarProdutoPorId (Loja ecommerce, Integer idProduto) {
+        for (Produto produto : ecommerce.getCatalogo()) {
+            if (idProduto == produto.getId()) {
+                return produto;
+            }
+        } 
+        throw new NullPointerException("Produto não encontrado no catálogo!");
+    }
+       
 
     // TODO remover produto, desnecessario para os propositos do projeto
 

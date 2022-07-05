@@ -1,29 +1,28 @@
 package Compra;
 
 import Produto.Produto;
+
 import java.util.HashMap;
 import java.util.Map;
 
+import Loja.Catalogo;
+import Loja.Loja;
 
-public abstract class Carrinho {
+
+public class Carrinho {
     
-    private static Map<Produto, Integer> listaDeProdutos = new HashMap<>();
+    private Map<Produto, Integer> carrinho = new HashMap<>();
 
-    public static <T extends Produto> void adicionarAoCarrinho(T produto, Integer qtdeAcrescentar) {
-        getCarrinho().put(produto, qtdeAcrescentar);
+    public void adicionarAoCarrinho(Loja ecommerce, Integer idProduto, Integer qtde) {
+        Produto produto = Catalogo.procurarProdutoPorId(ecommerce, idProduto);
+        this.carrinho.putIfAbsent(produto, qtde);
     }
 
     public Carrinho() {
 
     }
 
-    public static Map<Produto, Integer> getCarrinho() {
-        return listaDeProdutos;
+    public Map<Produto, Integer> getCarrinho() {
+        return carrinho;
     }
-
-
-
-
-
-
 }
