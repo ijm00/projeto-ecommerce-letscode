@@ -7,9 +7,9 @@ public abstract class Inventario {
     public static void cadastrarProdutoEmInventario(int idProduto, Integer quantidade) {
         try {
             ecommerce.getInventario().putIfAbsent(idProduto, quantidade);
-        } catch (RuntimeException e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
+        } catch (RuntimeException rte) {
+            System.err.println(rte.getMessage());
+            rte.printStackTrace();
         }
     }
 
@@ -17,11 +17,10 @@ public abstract class Inventario {
         try {
             Integer oldValue = ecommerce.getInventario().get(idProduto);
             ecommerce.getInventario().replace(idProduto, oldValue, oldValue + qtdeAcrescentar);
-        } catch (RuntimeException e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
+        } catch (RuntimeException rte) {
+            System.err.println(rte.getMessage());
+            rte.printStackTrace();
         }
-
     }
 
     public static void retirarItensDeProduto (Integer idProduto, Integer qtdeRemover) {//contabilmente, significa creditar do estoque
@@ -31,5 +30,4 @@ public abstract class Inventario {
         }
         ecommerce.getInventario().replace(idProduto, oldValue, oldValue - qtdeRemover);
     }
-
 }

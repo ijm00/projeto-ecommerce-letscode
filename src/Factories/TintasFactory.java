@@ -12,10 +12,8 @@ public abstract class TintasFactory{//Eletronicos
         
         CadastrarProdutoNaLoja.novoRegistro(tinta1);
         CadastrarProdutoNaLoja.novoRegistro(tinta2);
-        
 
         Inventario.incluirItensDeProduto(tinta1.getId(), 100);
         Inventario.incluirItensDeProduto(tinta2.getId(), 300);
-    
     }
 }

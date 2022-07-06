@@ -15,14 +15,9 @@ public abstract class EletronicosFactory{//Eletronicos
         CadastrarProdutoNaLoja.novoRegistro(eletronico2);
         // Cadastrar no catalogo e incluir no inventario os novos produtos aqui!
 
-
         Inventario.incluirItensDeProduto(eletronico1.getId(), 50);
         Inventario.incluirItensDeProduto(eletronico2.getId(), 200);
         // incluir itens ao inventario aqui!!
     }
-    
-    
-
-    
     
 }

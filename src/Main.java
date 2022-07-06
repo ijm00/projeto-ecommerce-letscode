@@ -71,9 +71,5 @@ public class Main {
         // Sistema mostra valor total (lista?) e pergunta qual a forma de pagamento
 
 
-
-
-
-
     }
 }

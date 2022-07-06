@@ -15,12 +15,10 @@ public abstract class InstrumentoMusicalFactory {
         //Produtos são cadastrados no catálogo e no inventário
         CadastrarProdutoNaLoja.novoRegistro(instrumento1);
         CadastrarProdutoNaLoja.novoRegistro(instrumento2);
-    
 
         //Cadastro de quantidades no inventário
         Inventario.incluirItensDeProduto(instrumento1.getId(), 5);
         Inventario.incluirItensDeProduto(instrumento2.getId(), 3);
         
     }
-
 }
