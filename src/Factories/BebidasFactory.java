@@ -1,30 +1,28 @@
 package Factories;
 
 import Loja.Inventario;
-import Produto.ProdutoCategoria1;
+import Produto.Bebida;
 import Servicos.CadastrarProdutoNaLoja;
 
 public class BebidasFactory {
 
     public static void ProdutoFactory() {
-        ProdutoCategoria1 prod1 = new ProdutoCategoria1("Vinho", "Tinto Seco - 750ml", 54.12);
-        ProdutoCategoria1 prod2 = new ProdutoCategoria1("Cerveja", "IPA artesanal - 355ml",17.59 );
-        ProdutoCategoria1 prod3 = new ProdutoCategoria1("Suco", "Uva Verde - 1,5L", 14.50);
-
-        //TODO instanciar novos produtos aqui!
+    Bebida bebida1 = new Bebida("Vinho", "Tinto Seco - 750ml", 54.12);
+    Bebida bebida2 = new Bebida("Cerveja", "IPA artesanal - 355ml",17.59 );
+    Bebida bebida3 = new Bebida("Suco", "Uva Verde - 1,5L", 14.50);
+    // instanciar novos produtos aqui!
         
-        CadastrarProdutoNaLoja.novoRegistro(prod1); // adiciona no catálogo e no inventário
-        CadastrarProdutoNaLoja.novoRegistro(prod2);
-        CadastrarProdutoNaLoja.novoRegistro(prod3);
+    CadastrarProdutoNaLoja.novoRegistro(bebida1); // adiciona no catálogo e no inventário
+    CadastrarProdutoNaLoja.novoRegistro(bebida2);
+    CadastrarProdutoNaLoja.novoRegistro(bebida3);
+    // Cadastrar no catalogo e incluir no inventario os novos produtos aqui!
 
-        //TODO Cadastrar no catalogo e incluir no inventario os novos produtos aqui!
 
-
-        Inventario.incluirItensDeProduto(prod1.getId(), 50);
-        Inventario.incluirItensDeProduto(prod2.getId(), 100);
-        Inventario.incluirItensDeProduto(prod2.getId(), 150);
-
-        //TODO incluir itens ao inventario aqui!!
+    Inventario.incluirItensDeProduto(bebida1.getId(), 50);
+    Inventario.incluirItensDeProduto(bebida2.getId(), 100);
+    Inventario.incluirItensDeProduto(bebida2.getId(), 150);
+    // incluir itens ao inventario aqui!!
+    
     }
     
 }

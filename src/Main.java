@@ -18,7 +18,6 @@ import Compra.Carrinho;
 import Compra.Comprar;
 import Compra.MeiosDePagamento;
 import Loja.Loja;
-import Produto.Produto;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -27,30 +26,32 @@ public class Main {
         Loja ecommerce = Loja.getInstance();  
         ecommerce.carregarProdutos();
 
-        Carrinho carrinho = new Carrinho();
-        carrinho.adicionarAoCarrinho(ecommerce, 3, 1);
-        carrinho.adicionarAoCarrinho(ecommerce, 6, 3);
+        Carrinho carrinho1 = new Carrinho();
+        carrinho1.adicionarAoCarrinho(ecommerce, 3, 1);
+        carrinho1.adicionarAoCarrinho(ecommerce, 6, 3);
+
+        Comprar compra1 = new Comprar(carrinho1, MeiosDePagamento.BOLETO, 1);
+        System.out.println(compra1);
 
 
-        ecommerce.getInventario().keySet().forEach(key -> {System.out.println(key +" - " + ecommerce.getInventario().get(key));});
-        ecommerce.getCatalogo().forEach((Produto produto) -> {System.out.println(produto);});
+        Carrinho carrinho2 = new Carrinho();
+        carrinho2.adicionarAoCarrinho(ecommerce, 2, 1);
+        carrinho2.adicionarAoCarrinho(ecommerce, 7, 6);
 
-        System.out.println("Carrinho de compra");
+        Comprar compra2 = new Comprar(carrinho2, MeiosDePagamento.CARTAO_PARCELADO, 3);
+        System.out.println(compra2);
+
+        //ecommerce.getInventario().keySet().forEach(key -> {System.out.println(key +" - " + ecommerce.getInventario().get(key));});
+        //ecommerce.getCatalogo().forEach((Produto produto) -> {System.out.println(produto);});
+
+        //System.out.println("Carrinho de compra");
         
-        carrinho.getCarrinho().keySet().forEach(key -> {System.out.println(key);});
+        //carrinho.getCarrinho().keySet().forEach(key -> {System.out.println(key);});
 
-        ecommerce.getCatalogo();
+        //ecommerce.getCatalogo();
 
-        Comprar compra = new Comprar(carrinho, MeiosDePagamento.BOLETO, 1);
-
-        compra.calcularValorTotal();
-        
-        System.out.println(compra);
 
         
-
-        
-    
 
         // Ação1: Cliente (seleciona categorias e), escolhe quantidade e adiciona produtos em um carrinho virtual
         // Possivel repetição da ação 1 para outros produtos

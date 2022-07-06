@@ -1,7 +1,10 @@
 package Compra;
 
+import java.math.BigDecimal;
+
 public interface Checkout {
 
-    Comprar calcularValorTotal();
+    BigDecimal calcularValorTotal();
+    BigDecimal calcularValorParcela();
     
 }

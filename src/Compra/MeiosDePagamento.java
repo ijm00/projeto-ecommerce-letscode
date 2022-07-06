@@ -6,13 +6,13 @@ public enum MeiosDePagamento {
     PAYPAL (1),
     BOLETO (1);
 
-    final int qtdMaxParcelas;
+    final Integer qtdMaxParcelas;
 
-    private MeiosDePagamento(int qtdMaxParcelas){
+    private MeiosDePagamento(Integer qtdMaxParcelas){
         this.qtdMaxParcelas = qtdMaxParcelas;
     }
 
-    public int getQtdMaxParcelas() {
+    public Integer getQtdMaxParcelas() {
         return qtdMaxParcelas;
     }
 }
