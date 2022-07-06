@@ -42,5 +42,4 @@ public class Loja {
         TintasFactory.ProdutoFactory();
         BebidasFactory.ProdutoFactory();
     }
-
 }

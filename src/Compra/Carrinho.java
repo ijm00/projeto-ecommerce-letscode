@@ -19,7 +19,6 @@ public class Carrinho {
     }
 
     public Carrinho() {
-
     }
 
     public Map<Produto, Integer> getCarrinho() {

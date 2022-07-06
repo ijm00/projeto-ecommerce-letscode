@@ -17,8 +17,4 @@ public abstract class Catalogo {
         } 
         throw new NullPointerException("Produto não encontrado no catálogo!");
     }
-       
-
-    // remover produto: desnecessario para os propositos do projeto
-
 }

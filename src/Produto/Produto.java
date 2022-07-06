@@ -23,18 +23,6 @@ public abstract class Produto {
         this.preco = new BigDecimal(preco);
     }
 
-    /*
-    private String gerarId() {
-        // geração de id do produto
-        String newId = Double.toString(Math.random()).substring(2, 6);
-        // verificação se já existe produto na loja com mesmo id
-        while (ecommerce.getInventario().containsKey(newId)) {
-            newId = Double.toString(Math.random()).substring(2, 6);
-        }
-        return newId;
-    }
-    */
-
     public int getId() {
         return id;
     }
@@ -49,7 +37,9 @@ public abstract class Produto {
 
     @Override
     public String toString() {
-        String precoFormatado = NumberFormat.getCurrencyInstance(new Locale("pt", "br")).format(preco);
+        String precoFormatado = NumberFormat
+            .getCurrencyInstance(new Locale("pt", "br"))
+            .format(preco);
         return String.format("[ID: %d\tNOME: %s\tDESCRICAO: %s\tPRECO: %s]",
                 id, nome, descricao, precoFormatado);
     }

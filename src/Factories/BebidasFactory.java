@@ -17,12 +17,10 @@ public class BebidasFactory {
     CadastrarProdutoNaLoja.novoRegistro(bebida3);
     // Cadastrar no catalogo e incluir no inventario os novos produtos aqui!
 
-
     Inventario.incluirItensDeProduto(bebida1.getId(), 50);
     Inventario.incluirItensDeProduto(bebida2.getId(), 100);
     Inventario.incluirItensDeProduto(bebida2.getId(), 150);
     // incluir itens ao inventario aqui!!
     
     }
-    
 }

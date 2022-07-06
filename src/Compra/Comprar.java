@@ -31,12 +31,11 @@ public class Comprar implements Checkout {
             throw new RuntimeException("Compra não efetuada. Tente novamente.");
         } catch (RuntimeException rte) {
             System.err.println(rte.getLocalizedMessage());
-        }
-        
+        }   
         for (Produto produto : this.carrinho.getCarrinho().keySet()) { // retira produto do estoque
-            Inventario.retirarItensDeProduto(produto.getId(), this.carrinho.getCarrinho().get(produto));
+            Inventario
+                .retirarItensDeProduto(produto.getId(), this.carrinho.getCarrinho().get(produto));
         }
-        
     }
 
     public BigDecimal getValorTotal() {
@@ -59,17 +58,18 @@ public class Comprar implements Checkout {
     public BigDecimal calcularValorTotal( ) {
         BigDecimal soma = BigDecimal.valueOf(0.0);
         for (Produto produto : this.carrinho.getCarrinho().keySet()){
-            soma = soma.add(produto.getPreco().multiply(BigDecimal.valueOf(this.carrinho.getCarrinho().get(produto))));
+            soma = soma.add(produto.getPreco()
+                .multiply(BigDecimal.valueOf(this.carrinho.getCarrinho().get(produto))));
         }
         this.valorTotal = soma;
         return this.valorTotal;
     }
 
+    @Override
     public BigDecimal calcularValorParcela() {
-        return this.getValorTotal().multiply(BigDecimal.valueOf(1.0/this.qtdParcelas)); //TODO não foi possivel aplicar o metodo .divide 
+        return this.getValorTotal()
+            .multiply(BigDecimal.valueOf(1.0/this.qtdParcelas)); //TODO não foi possivel aplicar o metodo .divide 
     }
-
-    
 
     private void saida(){
         System.out.println("-".repeat(20));
@@ -85,8 +85,12 @@ public class Comprar implements Checkout {
     @Override
     public String toString() {
         this.saida();
-        String precoFormatado = NumberFormat.getCurrencyInstance(new Locale("pt", "br")).format(this.calcularValorTotal());
-        String parcelaFormatada = NumberFormat.getCurrencyInstance(new Locale("pt", "br")).format(this.calcularValorParcela());
+        String precoFormatado = NumberFormat
+            .getCurrencyInstance(new Locale("pt", "br"))
+            .format(this.calcularValorTotal());
+        String parcelaFormatada = NumberFormat
+            .getCurrencyInstance(new Locale("pt", "br"))
+            .format(this.calcularValorParcela());
         return  "-".repeat(20) + "\n" +
                 "Dados da compra" + "\n" +
                 "-".repeat(20) + "\n" +
@@ -94,8 +98,6 @@ public class Comprar implements Checkout {
                 "Meio de Pagamento = " + this.pagamento + "\n" +
                 "Quantidade de Parcelas = " + this.getQtdParcelas() + "\n" +
                 "Valor da parcela = " + parcelaFormatada + "\n" +
-                "x".repeat(50); 
-                
+                "x".repeat(50);  
     }
-
 }
