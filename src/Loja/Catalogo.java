@@ -3,9 +3,9 @@ package Loja;
 import Produto.Produto;
 
 public abstract class Catalogo {
+    static Loja ecommerce = Loja.getInstance();
     
     public static <T extends Produto> void adicionarAoCatalogo(T produto) {
-        Loja ecommerce = Loja.getInstance();
         ecommerce.getCatalogo().add(produto);
     }
 

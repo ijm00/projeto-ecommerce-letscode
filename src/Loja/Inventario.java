@@ -9,7 +9,7 @@ public abstract class Inventario {
             ecommerce.getInventario().putIfAbsent(idProduto, quantidade);
         } catch (RuntimeException e) {
             System.err.println(e.getMessage());
-            System.err.println(e.getStackTrace());
+            e.printStackTrace();
         }
     }
 
@@ -19,22 +19,17 @@ public abstract class Inventario {
             ecommerce.getInventario().replace(idProduto, oldValue, oldValue + qtdeAcrescentar);
         } catch (RuntimeException e) {
             System.err.println(e.getMessage());
-            System.err.println(e.getStackTrace());
+            e.printStackTrace();
         }
 
     }
 
     public static void retirarItensDeProduto (Integer idProduto, Integer qtdeRemover) {//contabilmente, significa creditar do estoque
-        try {
-            Integer oldValue = ecommerce.getInventario().get(idProduto);
-            if (qtdeRemover > oldValue) {
-                throw new RuntimeException("Estoque insuficiente!");
-            }
-            ecommerce.getInventario().replace(idProduto, oldValue, oldValue - qtdeRemover);
-        } catch (RuntimeException e) {
-            System.err.println(e.getMessage());
-            System.err.println(e.getStackTrace());
+        Integer oldValue = ecommerce.getInventario().get(idProduto);
+        if (qtdeRemover > oldValue) {
+            throw new RuntimeException(String.format("Estoque insuficiente para a compra do produto código %s.", idProduto));
         }
+        ecommerce.getInventario().replace(idProduto, oldValue, oldValue - qtdeRemover);
     }
 
 }
