@@ -9,6 +9,7 @@ public class Main {
         Loja ecommerce = Loja.getInstance();  
         ecommerce.carregarProdutos();
 
+        //Compra 1
         Carrinho carrinho1 = new Carrinho();
         carrinho1.adicionarAoCarrinho(ecommerce, 3, 1);
         carrinho1.adicionarAoCarrinho(ecommerce, 6, 3);
@@ -16,7 +17,7 @@ public class Main {
         Comprar compra1 = new Comprar(carrinho1, MeiosDePagamento.BOLETO, 1);
         System.out.println(compra1);
 
-
+        //Compra 2
         Carrinho carrinho2 = new Carrinho();
         carrinho2.adicionarAoCarrinho(ecommerce, 2, 1);
         carrinho2.adicionarAoCarrinho(ecommerce, 7, 6);
