@@ -68,7 +68,7 @@ public class Comprar implements Checkout {
     @Override
     public BigDecimal calcularValorParcela() {
         return this.getValorTotal()
-            .multiply(BigDecimal.valueOf(1.0/this.qtdParcelas)); //TODO não foi possivel aplicar o metodo .divide 
+            .multiply(BigDecimal.valueOf(1.0/this.qtdParcelas)); // não foi possivel aplicar o metodo .divide 
     }
 
     private void saida(){
